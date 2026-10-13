@@ -1,0 +1,6 @@
+{
+  "name": "Tango Pizza & Grill",
+  "description": "Hot & Fresh Pizza, Grilled to Perfection in Nowshera Virkan. Order pizza, BBQ grill, crispy burgers, loaded fries and beverages.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tango Pizza & Grill | Hot & Fresh Pizza, Grilled to Perfection</title>
+  <meta name="description" content="Tango Pizza & Grill in Nowshera Virkan. Hot & Fresh Pizza, Grilled to Perfection, Burgers, Seekh Kabab, and Fast Food Takeout & Delivery.">
+
+  <!-- 1. Google Fonts: Poppins (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- 2. Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#121212',
+            brandCard: '#1a1a1a',
+            brandRed: '#e63946',
+            brandOrange: '#f4a261',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- 3. FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- 4. AOS (Animate On Scroll) CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Custom styles for Glassmorphism & glows -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #121212;
+      color: #f3f4f6;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+    }
+    .glass-nav {
+      background: rgba(18, 18, 18, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card {
+      background: rgba(26, 26, 26, 0.75);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glow-red {
+      box-shadow: 0 0 20px -2px rgba(230, 57, 70, 0.5);
+    }
+    .glow-red:hover {
+      box-shadow: 0 0 28px 2px rgba(230, 57, 70, 0.7);
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #ffffff 0%, #f4a261 50%, #e63946 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="selection:bg-[#e63946] selection:text-white">
+
+  <!-- ========================================== -->
+  <!-- 1. STICKY NAVBAR                           -->
+  <!-- ========================================== -->
+  <header class="sticky top-0 z-40 w-full glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-full bg-gradient-to-br from-[#e63946] to-[#f4a261] flex items-center justify-center text-white text-xl shadow-lg shadow-[#e63946]/30 group-hover:scale-105 transition-transform duration-200">
+          <i class="fa-solid fa-pizza-slice"></i>
+        </div>
+        <div>
+          <span class="font-heading font-extrabold text-xl sm:text-2xl tracking-tight text-white block leading-none">
+            TANGO <span class="text-[#e63946]">PIZZA</span>
+          </span>
+          <span class="text-[11px] font-medium tracking-widest text-[#f4a261] uppercase block">
+            & Grill · Nowshera Virkan
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+        <a href="#home" class="hover:text-[#f4a261] transition-colors">Home</a>
+        <a href="#menu" class="hover:text-[#f4a261] transition-colors">Menu</a>
+        <a href="#why-us" class="hover:text-[#f4a261] transition-colors">Why Us</a>
+        <a href="#gallery" class="hover:text-[#f4a261] transition-colors">Gallery</a>
+        <a href="#reviews" class="hover:text-[#f4a261] transition-colors">Reviews</a>
+        <a href="#contact" class="hover:text-[#f4a261] transition-colors">Contact</a>
+      </nav>
+
+      <!-- CTA & Mobile Trigger -->
+      <div class="flex items-center gap-3">
+        <a href="tel:03111666149" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#e63946] hover:bg-[#d62839] text-white text-xs sm:text-sm font-semibold tracking-wide glow-red transition-all duration-300">
+          <i class="fa-solid fa-phone text-xs"></i>
+          <span>Call: 0311 1666149</span>
+        </a>
+
+        <!-- Hamburger Icon Button -->
+        <button id="mobileMenuBtn" class="md:hidden p-2.5 rounded-xl bg-[#222222] text-gray-200 border border-white/10" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobileDrawer" class="fixed inset-0 z-50 hidden">
+    <div id="drawerOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+    <div class="fixed right-0 top-0 bottom-0 w-72 bg-[#181818] p-6 flex flex-col justify-between border-l border-white/10 z-10 shadow-2xl">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-white/10">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-pizza-slice text-[#e63946] text-xl"></i>
+            <span class="font-heading font-bold text-white text-lg">Tango Pizza</span>
+          </div>
+          <button id="drawerCloseBtn" class="w-8 h-8 rounded-full bg-[#262626] text-gray-400 hover:text-white flex items-center justify-center">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="mt-6 flex flex-col gap-4 text-base font-medium">
+          <a href="#home" class="mobile-link text-gray-300 hover:text-[#f4a261] py-1">Home</a>
+          <a href="#menu" class="mobile-link text-gray-300 hover:text-[#f4a261] py-1">Menu</a>
+          <a href="#why-us" class="mobile-link text-gray-300 hover:text-[#f4a261] py-1">Why Us</a>
+          <a href="#gallery" class="mobile-link text-gray-300 hover:text-[#f4a261] py-1">Gallery</a>
+          <a href="#reviews" class="mobile-link text-gray-300 hover:text-[#f4a261] py-1">Reviews</a>
+          <a href="#contact" class="mobile-link text-gray-300 hover:text-[#f4a261] py-1">Contact</a>
+        </div>
+      </div>
+      <div class="pt-6 border-t border-white/10 space-y-3">
+        <a href="tel:03111666149" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-[#e63946] text-white font-semibold text-sm shadow-lg shadow-[#e63946]/30">
+          <i class="fa-solid fa-phone"></i>
+          <span>Call: 0311 1666149</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 2. HERO SECTION                            -->
+  <!-- ========================================== -->
+  <section id="home" class="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1600&q=80');">
+    <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/80 to-[#121212]/50 z-0"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <div data-aos="fade-down" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md text-xs sm:text-sm font-medium text-[#f4a261] mb-6">
+        <i class="fa-solid fa-fire-flame-curved text-[#e63946]"></i>
+        <span>Hot & Fresh Pizza, Grilled to Perfection</span>
+      </div>
+
+      <h1 data-aos="fade-up" data-aos-delay="100" class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black tracking-tight text-white leading-tight mb-6">
+        Nowshera Virkan's Favorite Spot for <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#f4a261] via-[#e63946] to-[#f4a261]">Pizza & Grill</span>
+      </h1>
+
+      <p data-aos="fade-up" data-aos-delay="200" class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-gray-300 mb-10">
+        Experience the taste of fresh ingredients, smoky grills, and cheesy delights. Perfect for family dinners and takeout.
+      </p>
+
+      <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#menu" class="w-full sm:w-auto px-8 py-4 rounded-full bg-[#e63946] hover:bg-[#d62839] text-white font-heading font-bold text-base glow-red transition-all flex items-center justify-center gap-2">
+          <i class="fa-solid fa-utensils"></i>
+          <span>View Menu</span>
+        </a>
+        <a href="tel:03111666149" class="w-full sm:w-auto px-8 py-4 rounded-full bg-[#1e1e1e] hover:bg-[#282828] text-white font-heading font-bold text-base border border-white/20 transition-all flex items-center justify-center gap-2">
+          <i class="fa-solid fa-phone text-[#f4a261]"></i>
+          <span>Order on Call</span>
+        </a>
+      </div>
+
+      <div data-aos="zoom-in" data-aos-delay="400" class="mt-12 inline-flex items-center gap-4 px-6 py-3 rounded-2xl bg-[#1e1e1e]/85 border border-white/10 backdrop-blur-md shadow-2xl">
+        <div class="flex text-[#f4a261] text-sm">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <div class="h-4 w-px bg-white/20"></div>
+        <div class="text-left">
+          <p class="text-xs font-bold text-white">403+ Happy Reviews</p>
+          <p class="text-[11px] text-gray-400">Verified Local Ratings</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 3. WHY CHOOSE US (USP SECTION)             -->
+  <!-- ========================================== -->
+  <section id="why-us" class="py-24 bg-[#141414]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-xs font-bold tracking-widest text-[#f4a261] uppercase block mb-2">Our Standard</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white">Why Choose Tango</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div data-aos="fade-up" data-aos-delay="100" class="p-8 rounded-2xl glass-card">
+          <div class="w-14 h-14 rounded-2xl bg-[#e63946]/20 border border-[#e63946]/30 flex items-center justify-center text-[#e63946] text-2xl mb-6">
+            <i class="fa-solid fa-fire"></i>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-white mb-2">Charcoal Grill Mastery</h3>
+          <p class="text-sm text-gray-400">Authentic coal-fired aroma in our tender chicken malai boti and spicy seekh kababs.</p>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="200" class="p-8 rounded-2xl glass-card">
+          <div class="w-14 h-14 rounded-2xl bg-[#f4a261]/20 border border-[#f4a261]/30 flex items-center justify-center text-[#f4a261] text-2xl mb-6">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-white mb-2">100% Fresh Dough & Halal</h3>
+          <p class="text-sm text-gray-400">Daily hand-kneaded dough, 100% pure mozzarella cheese, and certified fresh chicken.</p>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="300" class="p-8 rounded-2xl glass-card">
+          <div class="w-14 h-14 rounded-2xl bg-[#e63946]/20 border border-[#e63946]/30 flex items-center justify-center text-[#e63946] text-2xl mb-6">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-white mb-2">Lightning Fast Takeout</h3>
+          <p class="text-sm text-gray-400">Quick kitchen turnaround so your pizzas and burgers stay piping hot and crispy.</p>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="400" class="p-8 rounded-2xl glass-card">
+          <div class="w-14 h-14 rounded-2xl bg-[#f4a261]/20 border border-[#f4a261]/30 flex items-center justify-center text-[#f4a261] text-2xl mb-6">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-white mb-2">Family Dining Comfort</h3>
+          <p class="text-sm text-gray-400">Modern, welcoming, and air-conditioned space at Ibrahim Heights on Karyal Road.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 4. INTERACTIVE MENU SECTION                -->
+  <!-- ========================================== -->
+  <section id="menu" class="py-24 bg-[#121212]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+        <span class="text-xs font-bold tracking-widest text-[#e63946] uppercase block mb-2">Taste The Best</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white">Our Delicious Menu</h2>
+      </div>
+
+      <!-- Menu Category Tabs -->
+      <div data-aos="fade-up" class="flex items-center justify-center flex-wrap gap-3 mb-12">
+        <button onclick="switchTab('pizza')" id="tab-pizza" class="menu-tab px-6 py-2.5 rounded-full text-sm font-semibold bg-[#e63946] text-white transition-all">Pizza</button>
+        <button onclick="switchTab('grill')" id="tab-grill" class="menu-tab px-6 py-2.5 rounded-full text-sm font-semibold bg-[#1e1e1e] text-gray-300 hover:text-white transition-all">Grill</button>
+        <button onclick="switchTab('burgers')" id="tab-burgers" class="menu-tab px-6 py-2.5 rounded-full text-sm font-semibold bg-[#1e1e1e] text-gray-300 hover:text-white transition-all">Burgers</button>
+        <button onclick="switchTab('sides')" id="tab-sides" class="menu-tab px-6 py-2.5 rounded-full text-sm font-semibold bg-[#1e1e1e] text-gray-300 hover:text-white transition-all">Sides</button>
+        <button onclick="switchTab('drinks')" id="tab-drinks" class="menu-tab px-6 py-2.5 rounded-full text-sm font-semibold bg-[#1e1e1e] text-gray-300 hover:text-white transition-all">Drinks</button>
+      </div>
+
+      <!-- Menu Grid -->
+      <div id="menuContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 5. GALLERY SECTION                         -->
+  <!-- ========================================== -->
+  <section id="gallery" class="py-24 bg-[#141414]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-xs font-bold tracking-widest text-[#f4a261] uppercase block mb-2">Moments & Cravings</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white">Food & Dining Gallery</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div data-aos="zoom-in" class="h-64 rounded-2xl overflow-hidden group relative cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" alt="Pizza" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Oven-Fresh Pizza</div>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="100" class="h-64 rounded-2xl overflow-hidden group relative cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80" alt="Grill" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Charcoal BBQ Skewers</div>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="200" class="h-64 rounded-2xl overflow-hidden group relative cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" alt="Burger" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Crispy Zinger Burger</div>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="300" class="h-64 rounded-2xl overflow-hidden group relative cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=800&q=80" alt="Fries" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Loaded Cheesy Fries</div>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="400" class="h-64 rounded-2xl overflow-hidden group relative cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Restaurant Interior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Family Dining Hall</div>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="500" class="h-64 rounded-2xl overflow-hidden group relative cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="BBQ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Tandoori Leg Quarter</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 6. TESTIMONIALS SECTION                    -->
+  <!-- ========================================== -->
+  <section id="reviews" class="py-24 bg-[#121212]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="text-xs font-bold tracking-widest text-[#e63946] uppercase block mb-2">Verified Reviews</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white">What Customers Say</h2>
+      </div>
+
+      <div class="glass-card rounded-3xl p-8 sm:p-12 relative shadow-2xl" data-aos="fade-up">
+        <div class="flex text-[#f4a261] mb-4 text-base">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p id="reviewText" class="text-lg sm:text-xl text-gray-200 italic mb-6">
+          "Hands down the crispiest Zinger Burger and cheesiest Tikka Pizza in Nowshera Virkan! The delivery was blazing hot within 25 minutes. Family absolutely loved the taste!"
+        </p>
+        <div class="flex items-center justify-between border-t border-white/10 pt-6">
+          <div>
+            <h4 id="reviewAuthor" class="font-heading font-bold text-white text-lg">Ahmed from Nowshera Virkan</h4>
+            <span class="text-xs text-[#f4a261]">Verified Local Diner</span>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="prevReview()" class="w-10 h-10 rounded-full bg-[#262626] text-white flex items-center justify-center hover:bg-[#333]">
+              <i class="fa-solid fa-chevron-left text-xs"></i>
+            </button>
+            <button onclick="nextReview()" class="w-10 h-10 rounded-full bg-[#262626] text-white flex items-center justify-center hover:bg-[#333]">
+              <i class="fa-solid fa-chevron-right text-xs"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 7. LOCATION & CONTACT SECTION              -->
+  <!-- ========================================== -->
+  <section id="contact" class="py-24 bg-[#141414]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-xs font-bold tracking-widest text-[#f4a261] uppercase block mb-2">Visit & Contact</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white">Find Us in Nowshera Virkan</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <!-- Contact Details -->
+        <div data-aos="fade-right" class="glass-card rounded-3xl p-8 sm:p-10 flex flex-col justify-between">
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-[#e63946]/20 text-[#e63946] flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <span class="text-xs text-gray-400 uppercase font-semibold">Address</span>
+                <p class="text-lg font-bold text-white mt-0.5">Ibrahim Heights, Karyal Road, Nowshera Virkan</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-[#f4a261]/20 text-[#f4a261] flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <span class="text-xs text-gray-400 uppercase font-semibold">Call to Order</span>
+                <a href="tel:03111666149" class="text-xl font-bold text-[#e63946] block hover:underline mt-0.5">0311 1666149</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-white/10 text-white flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div>
+                <span class="text-xs text-gray-400 uppercase font-semibold">Opening Hours</span>
+                <p class="text-lg font-bold text-white mt-0.5">12:00 PM - 12:00 AM (Midnight)</p>
+                <p class="text-xs text-[#25d366] font-semibold mt-0.5">Open All 7 Days</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-8 mt-6 border-t border-white/10 flex gap-4">
+            <a href="tel:03111666149" class="flex-1 py-3.5 rounded-2xl bg-[#e63946] text-white text-center font-bold text-sm glow-red">Call: 0311 1666149</a>
+            <a href="https://maps.google.com/?q=Ibrahim+Heights+Karyal+Road+Nowshera+Virkan" target="_blank" class="flex-1 py-3.5 rounded-2xl bg-white text-gray-900 text-center font-bold text-sm hover:bg-gray-200">Get Directions</a>
+          </div>
+        </div>
+
+        <!-- Google Map Iframe -->
+        <div data-aos="fade-left" class="glass-card rounded-3xl overflow-hidden h-96 sm:h-auto min-h-[320px] relative">
+          <iframe title="Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13548.887216654898!2d73.97825!3d31.96825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3918ddf088390d45%3A0x6b4ef8005b637be0!2sNowshera%20Virkan%2C%20Gujranwala%2C%20Punjab!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" class="w-full h-full border-0 filter invert contrast-125 opacity-90" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 8. FOOTER                                  -->
+  <!-- ========================================== -->
+  <footer class="bg-[#0c0c0c] border-t border-white/10 py-12 text-gray-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <i class="fa-solid fa-pizza-slice text-[#e63946] text-xl"></i>
+        <span class="font-heading font-bold text-white text-lg">Tango Pizza & Grill</span>
+      </div>
+
+      <div class="flex gap-6 text-xs">
+        <a href="#home" class="hover:text-white">Home</a>
+        <a href="#menu" class="hover:text-white">Menu</a>
+        <a href="#why-us" class="hover:text-white">Why Us</a>
+        <a href="#reviews" class="hover:text-white">Reviews</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
+      </div>
+
+      <div class="flex gap-4">
+        <a href="https://facebook.com" class="w-8 h-8 rounded-full bg-[#1e1e1e] hover:bg-[#e63946] text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+        <a href="https://instagram.com" class="w-8 h-8 rounded-full bg-[#1e1e1e] hover:bg-[#e63946] text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-instagram text-xs"></i></a>
+        <a href="https://wa.me/923111666149" class="w-8 h-8 rounded-full bg-[#1e1e1e] hover:bg-[#25d366] text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-whatsapp text-xs"></i></a>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 text-center mt-6 text-xs text-gray-600">
+      © 2026 Tango Pizza & Grill. All rights reserved. Ibrahim Heights, Karyal Road, Nowshera Virkan.
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- INTERACTIVE JAVASCRIPT                     -->
+  <!-- ========================================== -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // 1. Initialize AOS Scroll Animation
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 60
+    });
+
+    // 2. Mobile Drawer Logic
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    function toggleMenu(show) {
+      if (show) {
+        mobileDrawer.classList.remove('hidden');
+      } else {
+        mobileDrawer.classList.add('hidden');
+      }
+    }
+
+    mobileMenuBtn.addEventListener('click', () => toggleMenu(true));
+    drawerCloseBtn.addEventListener('click', () => toggleMenu(false));
+    drawerOverlay.addEventListener('click', () => toggleMenu(false));
+    mobileLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+
+    // 3. Menu Data & Tabs Logic
+    const menuData = {
+      pizza: [
+        { name: 'Tango Special Pizza', desc: 'Tikka chunks, sausages, olives, sweet corn, mushrooms, and double mozzarella.', price: '1,450', img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80' },
+        { name: 'Chicken Tikka Pizza', desc: 'Tender chicken tikka, purple onions, capsicum, and spiced tomato marinara.', price: '1,350', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80' },
+        { name: 'Fajita Sicilian', desc: 'Spiced fajita chicken, spicy jalapeños, bell peppers, fresh oregano, and mozzarella.', price: '1,390', img: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=600&q=80' },
+        { name: 'Cheesy Supreme', desc: 'Four-cheese blend of mozzarella, cheddar, gouda, and herb cream cheese.', price: '1,250', img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=80' }
+      ],
+      grill: [
+        { name: 'Chicken Seekh Kabab (4 Pcs)', desc: 'Skewered minced chicken with mint, coriander, and charcoal smoky aroma.', price: '620', img: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=600&q=80' },
+        { name: 'Malai Boti Skewers', desc: 'Creamy boneless chicken cubes marinated in yogurt, cream, and white pepper.', price: '790', img: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80' },
+        { name: 'Tandoori Leg Piece', desc: 'Slow-roasted chicken quarter marinated 12 hours in traditional Lahori spices.', price: '380', img: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80' }
+      ],
+      burgers: [
+        { name: 'Crispy Zinger Burger', desc: 'Crispy fried chicken breast fillet, fresh iceberg lettuce, and garlic mayo.', price: '520', img: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80' },
+        { name: 'Beef Cheese Burger', desc: '100% ground beef patty, melted cheddar, grilled onions, and house relish.', price: '680', img: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=600&q=80' },
+        { name: 'Chicken Patty Burger', desc: 'Mild seasoned chicken patty with sliced cucumbers, tomatoes, and creamy spread.', price: '360', img: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80' }
+      ],
+      sides: [
+        { name: 'Loaded Cheesy Fries', desc: 'Golden fries smothered in warm cheese sauce, spiced chicken, and jalapeños.', price: '590', img: 'https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=600&q=80' },
+        { name: 'Garlic Mayo Roll', desc: 'Flaky paratha roll filled with chicken tikka chunks and savory garlic mayo.', price: '340', img: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=600&q=80' },
+        { name: 'Crispy Hot Wings (6 Pcs)', desc: 'Golden battered spicy chicken wings served with tangy barbecue dip.', price: '450', img: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=600&q=80' }
+      ],
+      drinks: [
+        { name: 'Mint Margarita', desc: 'Crushed ice, fresh spearmint leaves, lemon juice, and sparkling soda fizz.', price: '260', img: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80' },
+        { name: 'Fresh Lime Soda', desc: 'Chilled club soda with freshly squeezed sour lime and black salt.', price: '180', img: 'https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80' },
+        { name: 'Soft Drinks (Chilled)', desc: 'Coca-Cola, Sprite, Fanta, or Mountain Dew.', price: '120', img: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80' }
+      ]
+    };
+
+    function switchTab(category) {
+      document.querySelectorAll('.menu-tab').forEach(btn => {
+        btn.classList.remove('bg-[#e63946]', 'text-white');
+        btn.classList.add('bg-[#1e1e1e]', 'text-gray-300');
+      });
+      const activeBtn = document.getElementById('tab-' + category);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-[#1e1e1e]', 'text-gray-300');
+        activeBtn.classList.add('bg-[#e63946]', 'text-white');
+      }
+
+      const container = document.getElementById('menuContainer');
+      const items = menuData[category] || [];
+      container.innerHTML = items.map(item => `
+        <div class="rounded-2xl overflow-hidden bg-[#1a1a1a] border border-white/5 hover:border-[#e63946]/30 transition-all flex flex-col group shadow-lg">
+          <div class="h-48 w-full overflow-hidden relative">
+            <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute bottom-3 right-3 bg-[#121212]/90 text-[#f4a261] font-bold text-xs px-3 py-1 rounded-full">PKR ${item.price}</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white mb-2">${item.name}</h3>
+              <p class="text-sm text-gray-400 mb-6">${item.desc}</p>
+            </div>
+            <a href="tel:03111666149" class="w-full py-2.5 rounded-xl bg-[#e63946] hover:bg-[#d62839] text-white text-xs font-semibold flex items-center justify-center gap-2">
+              <i class="fa-solid fa-phone text-xs"></i>
+              <span>Order Now (0311 1666149)</span>
+            </a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Initialize default tab
+    switchTab('pizza');
+
+    // 4. Testimonials Slider
+    const reviewsList = [
+      { text: "Hands down the crispiest Zinger Burger and cheesiest Tikka Pizza in Nowshera Virkan! The delivery was blazing hot within 25 minutes. Family absolutely loved the taste!", author: "Ahmed from Nowshera Virkan" },
+      { text: "The Malai Boti and Seekh Kababs have that authentic charcoal smoky aroma you rarely find around here. Ibrahim Heights location is super clean and family-friendly.", author: "Usman Tariq, Karyal Road" },
+      { text: "We ordered the Tango Special Pizza and Loaded Fries for our weekend family gathering. The crust was soft yet crisp, and cheese pull was unreal. 10/10 recommended!", author: "Zainab Bibi" }
+    ];
+    let reviewIdx = 0;
+
+    function renderReview() {
+      document.getElementById('reviewText').innerText = `"${reviewsList[reviewIdx].text}"`;
+      document.getElementById('reviewAuthor').innerText = reviewsList[reviewIdx].author;
+    }
+
+    function nextReview() {
+      reviewIdx = (reviewIdx + 1) % reviewsList.length;
+      renderReview();
+    }
+
+    function prevReview() {
+      reviewIdx = (reviewIdx - 1 + reviewsList.length) % reviewsList.length;
+      renderReview();
+    }
+  </script>
+</body>
+</html>
